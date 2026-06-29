@@ -12,8 +12,9 @@ export default function Home() {
   return (
     <div className="page">
       <div className="home-hero">
-        <h1 className="home-title">CHOW Family 🏡</h1>
-        <p className="home-subtitle">ยินดีต้อนรับสู่แอปบ้านเชาว์</p>
+        <img src="/logo.png" alt="ครอบครัว CHOW" className="home-logo" />
+        <h1 className="home-title">CHOW Family</h1>
+        <p className="home-subtitle">ยินดีต้อนรับสู่แอปบ้านเชาว์ 🏡</p>
       </div>
 
       {photos.length > 0 && (

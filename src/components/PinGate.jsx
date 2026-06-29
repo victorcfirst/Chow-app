@@ -37,7 +37,7 @@ export default function PinGate({ children }) {
   return (
     <div className="pin-gate">
       <div className="pin-gate-card">
-        <div className="pin-gate-logo">🏡</div>
+        <img src="/logo.png" alt="CHOW Family" className="pin-gate-logo" />
         <h1 className="pin-gate-title">CHOW Family</h1>
         <p className="pin-gate-subtitle">กรุณาใส่ PIN เพื่อเข้าใช้งาน</p>
         <div className="pin-inputs">

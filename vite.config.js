@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'icons/*.png'],
+      includeAssets: ['logo.png', 'icons/*.png', 'stickers/*.png'],
       manifest: {
         name: 'CHOW Family',
         short_name: 'CHOW',
