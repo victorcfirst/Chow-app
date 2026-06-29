@@ -365,3 +365,184 @@ a { color: inherit; text-decoration: none; }
 .stub-icon { font-size: 3rem; }
 .stub-title { font-size: 1.2rem; font-weight: 600; color: var(--text); }
 .stub-desc { font-size: 0.9rem; }
+
+/* ---- PAGE HEADER ---- */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 8px;
+  gap: 8px;
+}
+.page-title { font-size: 1.15rem; font-weight: 700; flex: 1; }
+.back-btn { font-size: 1.5rem; color: var(--primary); padding: 0 8px 0 0; line-height: 1; }
+.btn-add {
+  background: var(--primary); color: white; border-radius: 20px;
+  padding: 6px 16px; font-size: 0.875rem; font-weight: 600; white-space: nowrap;
+}
+.btn-add-sm {
+  background: var(--primary-light); color: var(--primary-dark);
+  border-radius: 16px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600;
+}
+.btn-add-inline { color: var(--primary); font-size: 0.875rem; font-weight: 600; padding: 6px 0; }
+.btn-primary {
+  background: var(--primary); color: white; border-radius: 10px;
+  padding: 10px 20px; font-size: 0.9rem; font-weight: 600;
+}
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-secondary {
+  background: #EEF2F7; color: var(--text-secondary);
+  border-radius: 10px; padding: 10px 16px; font-size: 0.9rem; font-weight: 500;
+}
+.btn-delete-sm {
+  color: #E53935; font-size: 0.875rem; padding: 4px 8px;
+  border-radius: 8px; background: #FFEBEE;
+}
+.section-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.section-header .section-title { margin-bottom: 0; }
+
+/* ---- FORMS ---- */
+.card-form {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 16px; box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.form-input {
+  border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 10px 12px; font-size: 0.9rem; font-family: inherit;
+  color: var(--text); background: var(--bg); outline: none; width: 100%;
+  transition: border-color 0.15s;
+}
+.form-input:focus { border-color: var(--primary); background: white; }
+select.form-input { cursor: pointer; }
+.form-row { display: flex; gap: 10px; }
+.form-row .form-field { flex: 1; }
+.form-actions { display: flex; gap: 8px; justify-content: flex-end; padding-top: 4px; }
+
+/* ---- NOTES ---- */
+.notes-list { display: flex; flex-direction: column; gap: 10px; }
+.note-card {
+  background: var(--surface); border-radius: var(--radius-sm);
+  padding: 14px; box-shadow: var(--shadow); border-left: 4px solid var(--border);
+}
+.note-card.pinned { border-left-color: #FB8C00; }
+.note-card.done { opacity: 0.55; }
+.note-content {
+  font-size: 0.95rem; line-height: 1.5; white-space: pre-wrap;
+  word-break: break-word; margin-bottom: 8px;
+}
+.note-card.done .note-content { text-decoration: line-through; }
+.note-members { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+.note-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.note-btn {
+  font-size: 0.75rem; padding: 4px 10px; border-radius: 16px;
+  background: var(--bg); color: var(--text-secondary); font-weight: 500;
+  border: 1px solid var(--border);
+}
+.note-btn.active { background: #E3F2FD; color: var(--primary); border-color: var(--primary-light); }
+.note-btn.danger { color: #E53935; border-color: #FFCDD2; }
+.note-textarea {
+  border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 12px; font-size: 0.9rem; font-family: inherit;
+  color: var(--text); background: white; outline: none; width: 100%;
+  resize: vertical; transition: border-color 0.15s; min-height: 80px;
+}
+.note-textarea:focus { border-color: var(--primary); }
+
+/* ---- RESTAURANTS ---- */
+.rest-list { display: flex; flex-direction: column; gap: 10px; }
+.rest-card {
+  display: flex; align-items: center; background: var(--surface);
+  border-radius: var(--radius-sm); padding: 14px 16px;
+  box-shadow: var(--shadow); gap: 12px; text-decoration: none; color: var(--text);
+}
+.rest-card-body { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.rest-name { font-weight: 600; font-size: 1rem; }
+.rest-phone, .rest-note { font-size: 0.8rem; color: var(--text-secondary); }
+.rest-arrow { font-size: 1.5rem; color: var(--border); }
+.rest-phone-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--primary); font-weight: 600; padding: 8px 0; font-size: 1rem;
+}
+
+/* ---- ORDER ---- */
+.status-badge {
+  padding: 4px 12px; border-radius: 16px;
+  font-size: 0.8rem; font-weight: 600; cursor: pointer; border: none;
+}
+.order-by-member { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+.order-member-group {
+  background: var(--bg); border-radius: var(--radius-sm); padding: 10px 12px;
+}
+.order-member-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.order-member-name { font-weight: 600; font-size: 0.9rem; }
+.order-item-row { display: flex; gap: 6px; align-items: baseline; padding: 2px 0; font-size: 0.875rem; }
+.order-item-note { color: var(--text-secondary); font-size: 0.8rem; }
+.menu-list { display: flex; flex-direction: column; }
+.menu-item-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;
+}
+.menu-item-row:last-child { border-bottom: none; }
+.menu-item-price { color: var(--text-secondary); font-size: 0.85rem; }
+
+/* ---- CALENDAR ---- */
+.filter-bar {
+  display: flex; gap: 8px; padding: 8px 16px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.filter-chip {
+  padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;
+  background: var(--surface); color: var(--text-secondary); border: 1.5px solid var(--border);
+  white-space: nowrap; transition: all 0.15s; flex-shrink: 0;
+}
+.filter-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+.event-card { background: var(--surface); border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow); }
+.event-card .countdown-card { box-shadow: none; }
+.event-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 12px 8px; gap: 8px;
+}
+.event-members { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* ---- INSURANCE ---- */
+.summary-row { display: flex; gap: 10px; overflow-x: auto; padding: 4px 0 4px; scrollbar-width: none; }
+.summary-row::-webkit-scrollbar { display: none; }
+.summary-card {
+  background: var(--surface); border-radius: var(--radius-sm);
+  padding: 14px 16px; min-width: 130px; box-shadow: var(--shadow); flex-shrink: 0;
+}
+.summary-card-name { font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 4px; }
+.summary-card-value { font-size: 1.1rem; font-weight: 700; }
+.summary-card-sub { font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px; }
+.policy-list { display: flex; flex-direction: column; gap: 10px; }
+.policy-card { background: var(--surface); border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow); }
+.policy-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.policy-main { flex: 1; min-width: 0; }
+.policy-name { font-weight: 600; font-size: 0.95rem; }
+.policy-company { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+.policy-meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.8rem; }
+.policy-meta-item { background: var(--bg); border-radius: 6px; padding: 3px 8px; color: var(--text-secondary); }
+.policy-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+
+/* ---- VEHICLES ---- */
+.tab-bar { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 0; }
+.tab-btn {
+  flex: 1; padding: 12px; font-size: 0.9rem; font-weight: 600;
+  color: var(--text-secondary); text-align: center;
+  border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s;
+}
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+.vehicle-list { display: flex; flex-direction: column; gap: 10px; }
+.vehicle-card { background: var(--surface); border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow); }
+.vehicle-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; }
+.vehicle-name { font-weight: 700; font-size: 1rem; }
+.vehicle-plate { font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px; }
+.vehicle-dates { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.vehicle-date-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; }
+.vehicle-date-label { color: var(--text-secondary); }
