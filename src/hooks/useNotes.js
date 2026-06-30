@@ -40,20 +40,47 @@ export function useNotes() {
         memberIds.map((member_id) => ({ note_id: note.id, member_id }))
       )
     }
+    setNotes(prev => [
+      { ...note, note_members: memberIds.map(id => ({ member_id: id })) },
+      ...prev,
+    ])
     return note
   }
 
+  async function updateNote(id, { content, memberIds }) {
+    const { data, error: err } = await supabase
+      .from('notes')
+      .update({ content, updated_at: new Date().toISOString() })
+      .eq('id', id)
+      .select()
+      .single()
+    if (err) throw err
+    await supabase.from('note_members').delete().eq('note_id', id)
+    if (memberIds.length > 0) {
+      await supabase.from('note_members').insert(
+        memberIds.map((member_id) => ({ note_id: id, member_id }))
+      )
+    }
+    setNotes(prev => prev.map(n =>
+      n.id === id ? { ...n, ...data, note_members: memberIds.map(mid => ({ member_id: mid })) } : n
+    ))
+    return data
+  }
+
   async function togglePin(id, pinned) {
+    setNotes(prev => prev.map(n => n.id === id ? { ...n, pinned: !pinned } : n))
     await supabase.from('notes').update({ pinned: !pinned }).eq('id', id)
   }
 
   async function toggleDone(id, done) {
+    setNotes(prev => prev.map(n => n.id === id ? { ...n, done: !done } : n))
     await supabase.from('notes').update({ done: !done }).eq('id', id)
   }
 
   async function deleteNote(id) {
+    setNotes(prev => prev.filter(n => n.id !== id))
     await supabase.from('notes').delete().eq('id', id)
   }
 
-  return { notes, loading, error, addNote, togglePin, toggleDone, deleteNote }
+  return { notes, loading, error, addNote, updateNote, togglePin, toggleDone, deleteNote }
 }
